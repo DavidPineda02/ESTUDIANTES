@@ -1,3 +1,9 @@
+<?php
+  require_once("config.php");
+  $data = new Config();
+  $all =  $data -> SelectAll();
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -45,11 +51,25 @@
                 <th scope="col">NOMBRES</th>
                 <th scope="col">DIRECCION</th>
                 <th scope="col">LOGROS</th>
-                <th scope="col">DETALLE</th>
+                <th scope="col">BORRAR</th>
               </tr>
             </thead>
             <tbody class="" id="tabla">
               <!-- ///////Llenado DInamico desde la Base de Datos -->
+              <?php
+                foreach($all as $key => $val){
+                  
+              ?>
+              <tr>
+                <td><?php echo $val['id'] ?></td>
+                <td><?php echo $val['nombres'] ?></td>
+                <td><?php echo $val['direccion'] ?></td>
+                <td><?php echo $val['logros'] ?></td>
+                <td><a class="btn btn-outline-danger" href="borrarEstudiantes.php?id= <?= $val['id']?> & req=delete"><strong>Borrar</strong></a></td>
+              </tr>
+              <?php 
+                } 
+              ?>
             </tbody>
           </table>
         </div>
