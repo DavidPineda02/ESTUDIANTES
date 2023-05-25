@@ -1,5 +1,7 @@
 CREATE DATABASE campus;
 
+USE campus;
+
 CREATE TABLE campers(
     id INT primary key AUTO_INCREMENT,
     nombres VARCHAR (50) NOT NULL,
