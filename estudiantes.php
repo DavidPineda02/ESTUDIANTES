@@ -1,4 +1,8 @@
 <?php
+  ini_set("display_errors" , 1);
+  ini_set("display_startup_errors" , 1);
+  error_reporting(E_ALL);
+
   require_once("config.php");
   $data = new Config();
   $all =  $data -> SelectAll();
@@ -28,7 +32,7 @@
           <h3>Maicol Estrada</h3>
         </div>
         <div class="menus">
-          <a href="/Home/home.php" style="display: flex;gap:2px;">
+          <a href="estudiantes.php" style="display: flex;gap:2px;">
             <i class="bi bi-house-door"> </i>
             <h3 style="margin: 0px;">Home</h3>
           </a>
@@ -51,6 +55,11 @@
                 <th scope="col">NOMBRES</th>
                 <th scope="col">DIRECCION</th>
                 <th scope="col">LOGROS</th>
+                <th scope="col">INGLES</th>
+                <th scope="col">SER</th>
+                <th scope="col">REVIEW</th>
+                <th scope="col">SKILLS</th>
+                <th scope="col">EDITAR</th>
                 <th scope="col">BORRAR</th>
               </tr>
             </thead>
@@ -65,6 +74,11 @@
                 <td><?php echo $val['nombres'] ?></td>
                 <td><?php echo $val['direccion'] ?></td>
                 <td><?php echo $val['logros'] ?></td>
+                <td> <?php echo $val['ingles']?> </td>
+                <td> <?php echo $val['ser']?> </td>
+                <td> <?php echo $val['review']?> </td>
+                <td> <?php echo $val['skills']?> </td>
+                <td><a class="btn btn-outline-info" href="editarEstudiantes.php?id= <?= $val['id']?>"><strong>Editar</strong></a></td>
                 <td><a class="btn btn-outline-danger" href="borrarEstudiantes.php?id= <?= $val['id']?> & req=delete"><strong>Borrar</strong></a></td>
               </tr>
               <?php 
@@ -117,6 +131,46 @@
                     name="logros"
                     class="form-control"
                   />
+                </div>
+
+                <div class="mb-3 col-12">
+                  <label for="ingles" class="form-label">Ingles</label>
+                    <select class="form-select form-select-l" name="ingles" id="ingles">
+                      <option selected>Selecciona</option>
+                      <option value="Basico">Basico</option>
+                      <option value="Intermedio">Intermedio</option>
+                      <option value="Avanzado">Avanzado</option>
+                    </select>
+                </div>
+
+                <div class="mb-1 col-12">
+                  <label for="ser" class="form-label">Ser</label>
+                  <select class="form-select form-select-l" name="ser" id="ser">
+                      <option selected>Selecciona</option>
+                      <option value="Angie">Angie</option>
+                      <option value="Vanessa">Vanessa</option>
+                    </select>
+                </div>
+
+                <div class="mb-3 col-12">
+                  <label for="review" class="form-label">Review</label>
+                    <select class="form-select form-select-l" name="review" id="review">
+                      <option selected>Selecciona</option>
+                      <option value="Excelente">Excelente</option>
+                      <option value="Bueno">Bueno</option>
+                      <option value="Malo">Malo</option>
+                      <option value="Pesimo">Pesimo</option>
+                    </select>
+                </div>
+
+                <div class="mb-3 col-12">
+                  <label for="skills" class="form-label">Skills</label>
+                    <select class="form-select form-select-l" name="skills" id="skills">
+                      <option selected>Selecciona</option>
+                      <option value="Jholver">Jholver</option>
+                      <option value="Vermen">Vermen</option>
+                      <option value="Miguel">Miguel</option>
+                    </select>
                 </div>
 
                 <div class=" col-12 m-2">
