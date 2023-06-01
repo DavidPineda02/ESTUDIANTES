@@ -3,8 +3,8 @@
     ini_set("display_startup_errors" , 1);
     error_reporting(E_ALL);
 
-    require_once("config.php");
-    $data = new Config();
+    require_once("Estudiante.php");
+    $data = new Estudiante(); 
 
     $id = $_GET['id'];
     $data -> setId($id);
@@ -49,7 +49,7 @@
                 <div class="perfil">
                     <h3 style="margin-bottom: 2rem;">Camp Skiler.</h3>
                     <img src="images/Diseño sin título.png" alt="" class="imagenPerfil">
-                    <h3 >Maicol Estrada</h3>
+                    <h3 >Vermen Ayala</h3>
                 </div>
                 <div class="menus">
                     <a href="estudiantes.php" style="display: flex;gap:2px;">
@@ -141,7 +141,7 @@
                         </div>
 
                         <div class=" col-12 m-2">
-                            <input type="submit" class="btn btn-outline-success" value="UPDATE" name="editar"/>
+                            <input type="submit" class="btn btn-success" value="Editar" name="editar"/>
                         </div>
                         </form>  
                     <div id="charts1" class="charts"> </div>

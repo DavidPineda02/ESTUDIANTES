@@ -3,8 +3,8 @@
   ini_set("display_startup_errors" , 1);
   error_reporting(E_ALL);
 
-  require_once("config.php");
-  $data = new Config();
+  require_once("Estudiante.php");
+  $data = new Estudiante();
   $all =  $data -> SelectAll();
 ?>
 
@@ -29,7 +29,7 @@
         <div class="perfil">
           <h3 style="margin-bottom: 2rem;">Camper Skills.</h3>
           <img src="images/Diseño sin título.png" alt="" class="imagenPerfil">
-          <h3>Maicol Estrada</h3>
+          <h3>Vermen Ayala</h3>
         </div>
         <div class="menus">
           <a href="estudiantes.php" style="display: flex;gap:2px;">
@@ -174,7 +174,7 @@
                 </div>
 
                 <div class=" col-12 m-2">
-                  <input type="submit" class="btn btn-primary" value="guardar" name="guardar"/>
+                  <input type="submit" class="btn btn-primary" value="Guardar" name="guardar"/>
                 </div>
               </form>  
             </div>       
